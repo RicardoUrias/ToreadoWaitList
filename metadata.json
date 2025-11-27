@@ -1,0 +1,5 @@
+{
+  "name": "TacoQueue",
+  "description": "Una aplicación moderna de lista de espera para Taquerías con gestión de mesas, cálculo de tiempo de espera en tiempo real y recomendaciones de meseros.",
+  "requestFramePermissions": []
+}
