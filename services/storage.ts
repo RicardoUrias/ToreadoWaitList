@@ -1,7 +1,7 @@
 import { Waiter, WaitlistEntry } from '../types';
 
 // Use environment variable for production URL, fallback to localhost for development
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const KEYS = {
   WAITERS: 'tacoqueue_waiters',
