@@ -1,6 +1,6 @@
 # TacoQueue (Tacos el Toreado)
 
-Lista de espera digital. El frontend es una app Vite + React pensada para **Cloudflare Pages**.
+Lista de espera digital. El frontend es una app Vite + React desplegada como **Cloudflare Worker con assets estáticos**.
 
 ## Desarrollo local
 
@@ -10,10 +10,11 @@ Lista de espera digital. El frontend es una app Vite + React pensada para **Clou
 
 Sin `VITE_API_URL`, la cola se guarda en `localStorage` (modo offline).
 
-## Build / Cloudflare Pages
+## Build / Cloudflare Workers
 
 - **Build command:** `npm run build`
-- **Output directory:** `dist`
+- **Output directory:** `dist` (configurado en `wrangler.toml` vía `[assets] directory`)
+- **Deploy:** `npx wrangler deploy` (o automático vía Workers Builds al hacer push)
 - Variables de build opcionales: `VITE_API_URL`, `VITE_GEMINI_API_KEY`
 
-El archivo `public/_redirects` hace que las rutas de SPA caigan en `index.html`.
+`not_found_handling = "single-page-application"` en `wrangler.toml` hace que las rutas de SPA caigan en `index.html` (el `public/_redirects` queda como respaldo, también soportado por Workers assets).
