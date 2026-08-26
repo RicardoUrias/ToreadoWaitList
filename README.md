@@ -17,4 +17,4 @@ Sin `VITE_API_URL`, la cola se guarda en `localStorage` (modo offline).
 - **Deploy:** `npx wrangler deploy` (o automático vía Workers Builds al hacer push)
 - Variables de build opcionales: `VITE_API_URL`, `VITE_GEMINI_API_KEY`
 
-`not_found_handling = "single-page-application"` en `wrangler.toml` hace que las rutas de SPA caigan en `index.html` (el `public/_redirects` queda como respaldo, también soportado por Workers assets).
+`not_found_handling = "single-page-application"` en `wrangler.toml` hace que las rutas de SPA caigan en `index.html`. No uses además un `public/_redirects` con `/* /index.html 200`: Workers assets detecta el loop entre ambos mecanismos y rechaza el deploy.
