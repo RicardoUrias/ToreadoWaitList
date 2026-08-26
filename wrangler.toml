@@ -1,4 +1,4 @@
-name = "toreado-waitlist"
+name = 'toreadowaitlist'
 compatibility_date = "2025-11-27"
 
 [assets]
